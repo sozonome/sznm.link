@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Image, Link } from "@chakra-ui/react";
 import { AiFillGithub } from "react-icons/ai";
 
-const repoLink = "https://github.com/sozonome/nextarter-chakra";
+const repoLink = "https://github.com/sozonome/sznm.link";
 
 const CTASection = () => {
   return (
@@ -11,7 +11,7 @@ const CTASection = () => {
           aria-label="Deploy to Vercel"
           isExternal
           rel="noopener noreferrer"
-          href="https://vercel.com/import/git?s=https://github.com/sozonome/nextarter-chakra"
+          href="https://vercel.com/import/git?s=https://github.com/sozonome/sznm.link"
         >
           <Image src="https://vercel.com/button" alt="Vercel deploy button" />
         </Link>
@@ -20,7 +20,7 @@ const CTASection = () => {
           aria-label="Deploy to Netlify"
           isExternal
           rel="noopener noreferrer"
-          href="https://app.netlify.com/start/deploy?repository=https://github.com/sozonome/nextarter-chakra"
+          href="https://app.netlify.com/start/deploy?repository=https://github.com/sozonome/sznm.link"
         >
           <Image
             src="https://www.netlify.com/img/deploy/button.svg"
@@ -32,7 +32,7 @@ const CTASection = () => {
       <Flex justifyContent="center" alignItems="center" gap={2}>
         <Button
           as="a"
-          href="https://github.com/sozonome/nextarter-chakra/generate"
+          href="https://github.com/sozonome/sznm.link/generate"
           target="_blank"
           size="sm"
         >
