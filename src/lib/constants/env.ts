@@ -1,1 +1,1 @@
-export const PRIMARY_HOST_NAME = process.env.PRIMARY_HOST_NAME ?? "";
+export const ROOT_REDIRECT = process.env.ROOT_REDIRECT ?? "";
