@@ -2,14 +2,10 @@
 import type { NextFetchEvent, NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-import { ROOT_REDIRECT } from "lib/constants/env";
-
 export const middleware = async (req: NextRequest, event: NextFetchEvent) => {
-  const slug = req.nextUrl.pathname.split("/")[1];
+  const urlSlug = req.nextUrl.pathname.split("/")[1];
 
-  if (!slug) {
-    return NextResponse.redirect(ROOT_REDIRECT);
-  }
+  const slug = ["", "_next"].includes(urlSlug) ? "index" : urlSlug;
 
   const entry = await fetch(
     `${req.nextUrl.origin}/api/notion/shortener/get-url?slug=${slug}`
