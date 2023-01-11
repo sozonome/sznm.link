@@ -22,7 +22,7 @@
     "@chakra-ui/react": "^2.4.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@notionhq/client": "^1.0.4",
+    "@notionhq/client": "^2.2.3",
     "framer-motion": "^7.6.17",
     "next": "13.0.5",
     "next-seo": "^5.14.1",

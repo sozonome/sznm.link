@@ -1,8 +1,6 @@
 import { notion } from "lib/services/notion/client";
-import type {
-  GetDatabaseOptionalArgs,
-  NotionDatabaseEntries,
-} from "lib/services/notion/common/database/types";
+
+import type { GetDatabaseOptionalArgs, NotionDatabaseEntries } from "./types";
 
 export const getDatabase = async (
   databaseId: string,
