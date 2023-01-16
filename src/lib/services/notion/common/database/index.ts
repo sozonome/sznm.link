@@ -1,15 +1,11 @@
+import type { QueryDatabaseParameters } from "@notionhq/client/build/src/api-endpoints";
+
 import { notion } from "lib/services/notion/client";
 
-import type { GetDatabaseOptionalArgs, NotionDatabaseEntries } from "./types";
+import type { NotionDatabaseEntries } from "./types";
 
-export const getDatabase = async (
-  databaseId: string,
-  query?: GetDatabaseOptionalArgs
-) => {
-  const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: query?.filter,
-  });
+export const getDatabase = async (query: QueryDatabaseParameters) => {
+  const response = await notion.databases.query(query);
 
   return response.results as NotionDatabaseEntries;
 };
