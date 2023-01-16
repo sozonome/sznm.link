@@ -75,6 +75,7 @@ export const getStaticProps: GetStaticProps<{
     props: {
       data,
     },
+    revalidate: 10,
   };
 };
 
