@@ -1,16 +1,16 @@
 /* eslint-disable consistent-return */
-import type { NextFetchEvent, NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import type { NextFetchEvent, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-import { defaultHeader } from "lib/constants/api/header";
+import { defaultHeader } from 'lib/constants/api/header';
 import {
   adminAll,
   adminLogin,
   privateRoutes,
   restrictedRoutes,
-} from "lib/constants/routes";
+} from 'lib/constants/routes';
 
-import { authCheck } from "./authCheck";
+import { authCheck } from './authCheck';
 
 export const middleware = async (req: NextRequest, event: NextFetchEvent) => {
   if (restrictedRoutes.includes(req.nextUrl.pathname)) {
@@ -29,8 +29,8 @@ export const middleware = async (req: NextRequest, event: NextFetchEvent) => {
     return NextResponse.redirect(`${req.nextUrl.origin}${adminLogin}`);
   }
 
-  const urlSlug = req.nextUrl.pathname.split("/")[1];
-  const slug = urlSlug === "" ? "index" : urlSlug;
+  const urlSlug = req.nextUrl.pathname.split('/')[1];
+  const slug = urlSlug === '' ? 'index' : urlSlug;
 
   const entry = await fetch(
     `${req.nextUrl.origin}/api/shortener/get-url?slug=${slug}`
@@ -39,7 +39,7 @@ export const middleware = async (req: NextRequest, event: NextFetchEvent) => {
   if (entry?.url) {
     event.waitUntil(
       fetch(`${req.nextUrl.origin}/api/shortener/add-click`, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify({ slug }),
         headers: defaultHeader,
       })

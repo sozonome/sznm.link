@@ -1,5 +1,5 @@
-import { Flex } from "@chakra-ui/react";
-import { NextSeo } from "next-seo";
+import { Flex } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 
 const Home = () => {
   return (

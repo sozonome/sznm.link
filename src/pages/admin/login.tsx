@@ -1,14 +1,14 @@
-import { Button, Flex, Grid, useToast } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import * as React from "react";
+import { Button, Flex, Grid, useToast } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
+import * as React from 'react';
 
-import ControlledInput from "lib/components/shared/form/ControlledInput";
-import { adminAll } from "lib/constants/routes";
+import ControlledInput from 'lib/components/shared/form/ControlledInput';
+import { adminAll } from 'lib/constants/routes';
 
 const EditorLoginPage = () => {
   const router = useRouter();
   const toast = useToast();
-  const [password, setPassword] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>('');
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -16,8 +16,8 @@ const EditorLoginPage = () => {
 
   const handleLogin = async () => {
     setIsLoading(true);
-    await fetch("/api/admin/login", {
-      method: "POST",
+    await fetch('/api/admin/login', {
+      method: 'POST',
       body: JSON.stringify({ password }),
     }).then(async (res) => {
       if (res.status === 200) {
@@ -27,9 +27,9 @@ const EditorLoginPage = () => {
 
       const error = await res.json();
       toast({
-        title: "Login Failed",
-        status: "error",
-        position: "top",
+        title: 'Login Failed',
+        status: 'error',
+        position: 'top',
         description: error.message,
       });
     });
@@ -37,7 +37,7 @@ const EditorLoginPage = () => {
   };
 
   const handleKeyDown = async (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.code === "Enter") {
+    if (e.code === 'Enter') {
       await handleLogin();
     }
   };

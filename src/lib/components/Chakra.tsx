@@ -1,6 +1,6 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react';
 
-import customTheme from "lib/styles/theme";
+import customTheme from 'lib/styles/theme';
 
 interface ChakraProps {
   children: React.ReactNode;

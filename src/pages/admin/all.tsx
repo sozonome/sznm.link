@@ -7,11 +7,11 @@ import {
   Heading,
   Text,
   useToast,
-} from "@chakra-ui/react";
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
+} from '@chakra-ui/react';
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 
-import { getShortenerList } from "lib/services/notion/link-shortener/getShortenerList";
-import type { ShortenedUrlEntry } from "lib/services/notion/link-shortener/types";
+import { getShortenerList } from 'lib/services/notion/link-shortener/getShortenerList';
+import type { ShortenedUrlEntry } from 'lib/services/notion/link-shortener/types';
 
 const AllLinkPage = ({
   data,
@@ -24,8 +24,8 @@ const AllLinkPage = ({
       toast({
         description: `${url} copied`,
         id: url,
-        position: "top-right",
-        status: "success",
+        position: 'top-right',
+        status: 'success',
       });
     }
   };
@@ -34,7 +34,7 @@ const AllLinkPage = ({
     <Grid gap={12}>
       <Heading>Links</Heading>
 
-      <Grid gap={8} templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}>
+      <Grid gap={8} templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}>
         {data.map((entry) => (
           <Card borderRadius={24} shadow="lg">
             <CardHeader>

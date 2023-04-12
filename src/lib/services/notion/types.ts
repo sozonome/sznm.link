@@ -4,11 +4,11 @@
  * to conform with @notionhq/client v2
  */
 
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export declare type GetPagePropertyResponse =
-  PageObjectResponse["properties"][string];
-export declare type PropertyValueType = GetPagePropertyResponse["type"];
+  PageObjectResponse['properties'][string];
+export declare type PropertyValueType = GetPagePropertyResponse['type'];
 export declare type ExtractedPropertyValue<TType extends PropertyValueType> =
   Extract<
     GetPagePropertyResponse,
@@ -17,6 +17,6 @@ export declare type ExtractedPropertyValue<TType extends PropertyValueType> =
     }
   >;
 
-export declare type PropertyValueRichText = ExtractedPropertyValue<"rich_text">;
-export declare type PropertyValueNumber = ExtractedPropertyValue<"number">;
-export declare type PropertyValueUrl = ExtractedPropertyValue<"url">;
+export declare type PropertyValueRichText = ExtractedPropertyValue<'rich_text'>;
+export declare type PropertyValueNumber = ExtractedPropertyValue<'number'>;
+export declare type PropertyValueUrl = ExtractedPropertyValue<'url'>;

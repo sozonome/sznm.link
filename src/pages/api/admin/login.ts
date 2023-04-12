@@ -1,18 +1,18 @@
-import { get } from "@vercel/edge-config";
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import { get } from '@vercel/edge-config';
+import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 
-import { defaultHeader } from "lib/constants/api/header";
-import { AUTH_KEY_MATCHER, CLIENT_AUTH_KEY_MATCHER } from "lib/constants/env";
-import { slEncrypt } from "lib/utils/slEncrypt";
+import { defaultHeader } from 'lib/constants/api/header';
+import { AUTH_KEY_MATCHER, CLIENT_AUTH_KEY_MATCHER } from 'lib/constants/env';
+import { slEncrypt } from 'lib/utils/slEncrypt';
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: 'experimental-edge',
 };
 
 const editorLogin = async (req: NextRequest) => {
-  if (req.method !== "POST") {
-    return new Response(JSON.stringify({ message: "Invalid method" }), {
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ message: 'Invalid method' }), {
       status: 400,
       headers: defaultHeader,
     });
@@ -21,7 +21,7 @@ const editorLogin = async (req: NextRequest) => {
   const { password } = await req.json();
 
   if (!password) {
-    return new Response(JSON.stringify({ message: "no password sent" }), {
+    return new Response(JSON.stringify({ message: 'no password sent' }), {
       status: 400,
       headers: defaultHeader,
     });
@@ -39,7 +39,7 @@ const editorLogin = async (req: NextRequest) => {
     return response;
   }
 
-  return new Response(JSON.stringify({ message: "Invalid password" }), {
+  return new Response(JSON.stringify({ message: 'Invalid password' }), {
     status: 400,
     headers: defaultHeader,
   });
